@@ -4,7 +4,7 @@ A very simple, lightweight modal and control system made using pure vanilla java
 
 ## Installation
 
-`npm install justbardSimpleModal`
+`npm install justbard-simple-modal`
 
 ## Getting Started
 
