@@ -14,6 +14,14 @@
 	background-color: green;
 }
 
+.button__red {
+	background-color: #990000;
+}
+
+.button__yellow {
+	background-color: #9ebb1f;
+}
+
 .button a {
 	text-decoration: none;
 	color: white;

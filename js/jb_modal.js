@@ -8,8 +8,10 @@ jbModalParams['jb_modal_header_image'] = false;
 jbModalParams['jb_modal_header_image_clip'] = false;
 jbModalParams['jb_modal_header_1'] = false;
 jbModalParams['jb_modal_header_2'] = false;
+jbModalParams['set_empty_content'] = true;
+jbModalParams['set_empty_footer'] = true;
 
-const buildJBModal = function (params = false) {
+const buildJBModal = function (jbModalContent = false, jbModalFooter = false) {
 	let jbModalHeader = false;
 	let jbModalHeaderContents = false;
 	let jbModalHeaderTitle = false;
@@ -48,7 +50,7 @@ const buildJBModal = function (params = false) {
 	}
 
 	if (jbModalParams.jb_modal_header_2) {
-		const jbModalHeader2 = `<h1>${jbModalParams.jb_modal_header_1}</h1>`;
+		const jbModalHeader2 = `<h2>${jbModalParams.jb_modal_header_2}</h2>`;
 		if (jbModalHeaderTitle) {
 			jbModalHeaderTitle = `${jbModalHeaderTitle}${jbModalHeader2}</div>`;
 		} else {
@@ -101,6 +103,22 @@ const buildJBModal = function (params = false) {
 		jbModalContentDiv.insertAdjacentHTML('beforeend', jbModalHeader);
 	}
 
+	if (jbModalContent) {
+		jbModalContent = `<div class="jb__modal__content__body">${jbModalContent}</div>`;
+		jbModalContentDiv.insertAdjacentHTML('beforeend', jbModalContent);
+	} else if (jbModalParams.set_empty_content) {
+		jbModalContent = `<div class="jb__modal__content__body"></div>`;
+		jbModalContentDiv.insertAdjacentHTML('beforeend', jbModalContent);
+	}
+
+	if (jbModalFooter) {
+		jbModalFooter = `<div class="jb__modal__content__footer">${jbModalFooter}</div>`;
+		jbModalContentDiv.insertAdjacentHTML('beforeend', jbModalFooter);
+	} else if (jbModalParams.set_empty_footer) {
+		jbModalFooter = `<div class="jb__modal__content__footer"></div>`;
+		jbModalContentDiv.insertAdjacentHTML('beforeend', jbModalFooter);
+	}
+
 	///////////////////////////////////////////////
 	// Add Close Listener
 	///////////////////////////////////////////////
@@ -110,6 +128,38 @@ const buildJBModal = function (params = false) {
 	});
 
 	console.log(currentJBModal);
+};
+
+const updateJBModalContent = function (jbModalContent = false) {
+	if (jbModalContent) {
+		const jbModalContentBodyDiv = document.querySelector(
+			'.jb__modal__content__body'
+		);
+		if (jbModalContentBodyDiv) {
+			jbModalContentBodyDiv.innerHTML = '';
+			jbModalContentBodyDiv.innerHTML = jbModalContent;
+		} else {
+			console.error(
+				'JB_Modal content body not found on update attempt... Did you build one yet?'
+			);
+		}
+	}
+};
+
+const updateJBModalFooterContent = function (jbModalFooterContent = false) {
+	if (jbModalFooterContent) {
+		const jbModalFooterContentDiv = document.querySelector(
+			'.jb__modal__content__footer'
+		);
+		if (jbModalFooterContentDiv) {
+			jbModalFooterContentDiv.innerHTML = '';
+			jbModalFooterContentDiv.innerHTML = jbModalFooterContent;
+		} else {
+			console.error(
+				'JB_Modal footer not found on update attempt... Did you build one yet?'
+			);
+		}
+	}
 };
 
 const openJBModal = function () {
