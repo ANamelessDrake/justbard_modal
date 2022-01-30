@@ -1,0 +1,195 @@
+.jb__modal,
+.jb__modal__medium,
+.jb__modal__small {
+	display: none;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	// background: var(--color-grey-dark-6);
+	background: rgba(0, 0, 0, 0.85);
+	height: 100vh;
+	width: 100vw;
+	transition: opacity 300ms ease-in-out;
+
+	&__content {
+		position: relative;
+		opacity: 0;
+		top: -100rem;
+		background: white;
+		max-width: 100rem;
+		width: 90%;
+		max-height: 90%;
+		margin: auto;
+		padding: 1rem 1.5rem;
+		border-radius: var(--border-radius-2);
+		background: var(--color-grey-light-1);
+		overflow: hidden;
+		transition: all 400ms ease-in-out;
+		transition-delay: 300ms;
+
+		&__controls {
+			height: 3rem;
+			display: flex;
+			justify-content: end;
+			align-items: center;
+			border-bottom: var(--line-med);
+			color: var(--color-grey-dark-1);
+
+			span {
+				margin: 0;
+				padding: 0;
+				font-size: 3rem;
+				margin-right: 0.5rem;
+				cursor: pointer;
+			}
+		}
+
+		&__header {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			height: 20rem;
+			top: 0;
+
+			&__background {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 20rem;
+
+				&--clip {
+					-webkit-clip-path: polygon(0 6%, 100% 0, 100% 95%, 0 100%);
+					clip-path: polygon(0 6%, 100% 0, 100% 95%, 0 100%);
+				}
+
+				&--clip-bottom {
+					-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+					clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+				}
+
+				&--clip-bottom-mirror {
+					-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+					clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+				}
+			}
+
+			&__title {
+				color: var(--color-white);
+				position: absolute;
+				text-align: center;
+
+				h1 {
+					color: var(--color-white);
+					text-transform: uppercase;
+					font-size: 4rem;
+					font-weight: 900;
+					text-shadow: 0.2rem 0.2rem var(--color-primary);
+				}
+
+				h2 {
+					font-size: 2rem;
+					color: var(--color-grey-light-3);
+					text-shadow: 0.1rem 0.1rem var(--color-primary);
+				}
+			}
+		}
+
+		&__body {
+			min-height: 15rem;
+			max-height: 70vh;
+			width: 100%;
+			height: 20%;
+			margin: 1rem 0;
+			overflow-y: auto;
+			font-size: 1.25rem;
+			color: var(--color-grey-dark-1);
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&__footer {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			min-height: 5rem;
+			border-top: var(--line-med);
+
+			color: var(--color-grey-dark-1);
+			text-align: center;
+		}
+	}
+}
+
+.jb__modal__display {
+	display: flex;
+	opacity: 1;
+	.jb__modal__content {
+		opacity: 1;
+		top: 0;
+	}
+}
+
+.jb__modal__small {
+	.jb__modal__content {
+		max-width: 50rem;
+	}
+}
+
+.jb__modal__medium {
+	.jb__modal__content {
+		max-width: 75rem;
+	}
+}
+
+////////////////////////////////////////////////////////////
+// EXAMPLE
+////////////////////////////////////////////////////////////
+// <div class="jb__modal__medium jb__modal__display">
+// 	<div class="jb__modal__content">
+// 		<div class="jb__modal__content__controls">
+// 			<span class="material-icons-sharp"> close </span>
+// 		</div>
+// 		<div class="jb__modal__content__header">
+// 			<img
+// 				src="https://images.unsplash.com/photo-1512987415479-85f370bca602?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+// 				alt="field of wheet with moon"
+// 				class="jb__modal__content__header__background jb__modal__content__header__background--clip-bottom"
+// 			/>
+// 			<div class="jb__modal__content__header__title">
+// 				<h1>This is some modal!</h1>
+// 				<h2>This is some more text</h2>
+// 			</div>
+// 		</div>
+// 		<div class="jb__modal__content__body">
+// 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quidem
+// 			porro deleniti nisi a minus nihil cupiditate aliquam necessitatibus
+// 			deserunt inventore omnis nostrum eveniet, cumque, vel perspiciatis
+// 			eligendi delectus similique.
+// 		</div>
+// 		<div class="jb__modal__content__footer">Some Grand Footer</div>
+// 	</div>
+// </div>
+//
+////////////////////////////////////////////////////////////
+//
+// MODAL SIZES
+// jb__modal
+// jb__modal__medium
+// jb__modal__small
+//
+////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////
+//
+// HEADER Image Clipping can be set with
+// --clip
+// --clip-bottom
+// --clip-bottom-mirror
+//
+////////////////////////////////////////////////////////////

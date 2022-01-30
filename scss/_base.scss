@@ -1,0 +1,47 @@
+:root {
+	--color-primary: #fe7c0d;
+
+	--color-white: #fff;
+	--color-grey-light-1: #faf9f9;
+	--color-grey-light-2: #f4f2f2;
+	--color-grey-light-3: #f0eeee;
+	--color-grey-light-4: #ccc;
+
+	--color-grey-dark: #333;
+	--color-grey-dark-1: #4e4e4e;
+	--color-grey-dark-2: #777;
+	--color-grey-dark-3: #999;
+	--color-grey-dark-4: #b3b3b3;
+	--color-grey-dark-5: rgba(179, 179, 179, 0.37);
+	--color-grey-dark-6: rgba(63, 63, 63, 0.952);
+
+	--card-border-radius: 1rem;
+	--border-radius-1: 0.4rem;
+	--border-radius-2: 0.8rem;
+	--border-radius-3: 1.2rem;
+
+	--line: 1px solid var(--color-grey-light-2);
+	--line-med: 1px solid var(--color-grey-dark-4);
+	--line-dark: 1px solid var(--color-grey-dark-1);
+
+	--line-med-thick: 2px solid var(--color-grey-light-2);
+	--line-med-thick-med: 2px solid var(--color-grey-dark-4);
+	--line-med-thick-dark: 2px solid var(--color-grey-dark-1);
+
+	--line-thick: 3px solid var(--color-grey-light-2);
+	--line-thick-med: 3px solid var(--color-grey-dark-4);
+	--line-thick-dark: 3px solid var(--color-grey-dark-1);
+}
+
+// PAGE DEFAULTS
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+}

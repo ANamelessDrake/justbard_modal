@@ -1,0 +1,21 @@
+.button {
+	margin: auto;
+	margin-top: 2rem;
+	background: blue;
+	padding: 2rem;
+	width: 25rem;
+	color: white;
+	cursor: pointer;
+	border-radius: 3rem;
+	text-align: center;
+}
+
+.button__green {
+	background-color: green;
+}
+
+.button a {
+	text-decoration: none;
+	color: white;
+	font-size: 2rem;
+}
