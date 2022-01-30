@@ -1,6 +1,6 @@
 {
 	"name": "justbard-simple-modal",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"homepage": "https://github.com/ANamelessDrake/justbard_modal",
 	"repository": {
 		"type": "git",
@@ -10,7 +10,7 @@
 		"devserver": "live-server",
 		"prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/jb_modal.comp.css -o css/jb_modal.css",
 		"compile:scss": "node-sass scss/jb_modal.scss css/jb_modal.comp.css",
-		"compress:css": "node-sass css/jb_modal.prefix.css css/jb_modal.min.css --output-style compressed",
+		"compress:css": "node-sass css/jb_modal.css css/jb_modal.min.css --output-style compressed",
 		"compress:js": "uglifyjs js/jb_modal.js -o js/jb_modal.min.js",
 		"watch": "node-sass scss/jb_modal.scss css/jb_modal.css -w",
 		"start": "npm-run-all --parallel devserver watch",
