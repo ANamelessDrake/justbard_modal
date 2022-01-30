@@ -5,9 +5,16 @@
 	padding: 2rem;
 	width: 25rem;
 	color: white;
+	font-size: 2rem;
 	cursor: pointer;
 	border-radius: 3rem;
 	text-align: center;
+	border: 1px solid #383838;
+}
+
+.button:hover {
+	background: white;
+	color: black;
 }
 
 .button__green {
@@ -20,10 +27,4 @@
 
 .button__yellow {
 	background-color: #9ebb1f;
-}
-
-.button a {
-	text-decoration: none;
-	color: white;
-	font-size: 2rem;
 }

@@ -120,14 +120,18 @@ const buildJBModal = function (jbModalContent = false, jbModalFooter = false) {
 	}
 
 	///////////////////////////////////////////////
-	// Add Close Listener
+	// Add Close Listeners
 	///////////////////////////////////////////////
 	const jbModalClose = document.getElementById('jbModalClose');
 	jbModalClose.addEventListener('click', function () {
 		closeJBModal();
 	});
 
-	console.log(currentJBModal);
+	currentJBModal.addEventListener('click', function () {
+		if (event.srcElement.id === 'jb_modal') {
+			closeJBModal();
+		}
+	});
 };
 
 const updateJBModalContent = function (jbModalContent = false) {
