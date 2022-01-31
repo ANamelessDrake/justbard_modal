@@ -101,6 +101,9 @@ const buildJBModal = function (jbModalContent = false, jbModalFooter = false) {
 
 	if (jbModalHeaderContents) {
 		jbModalContentDiv.insertAdjacentHTML('beforeend', jbModalHeader);
+	} else {
+		jbModalHeader = `<div class="jb__modal__content__header"></div>`;
+		jbModalContentDiv.insertAdjacentHTML('beforeend', jbModalHeader);
 	}
 
 	if (jbModalContent) {
