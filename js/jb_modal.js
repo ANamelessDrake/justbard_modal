@@ -4,6 +4,7 @@ const jbModalDisplay = 'jb__modal__display';
 let jbModal;
 let jbModalParams = {};
 jbModalParams['modalSize'] = false;
+jbModalParams['buildHeader'] = true;
 jbModalParams['jb_modal_header_image'] = false;
 jbModalParams['jb_modal_header_image_clip'] = false;
 jbModalParams['jb_modal_header_1'] = false;
@@ -101,7 +102,7 @@ const buildJBModal = function (jbModalContent = false, jbModalFooter = false) {
 
 	if (jbModalHeaderContents) {
 		jbModalContentDiv.insertAdjacentHTML('beforeend', jbModalHeader);
-	} else {
+	} else if (jbModalParams.buildHeader) {
 		jbModalHeader = `<div class="jb__modal__content__header"></div>`;
 		jbModalContentDiv.insertAdjacentHTML('beforeend', jbModalHeader);
 	}
