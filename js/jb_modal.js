@@ -134,6 +134,74 @@ const buildJBModal = function (jbModalContent = false, jbModalFooter = false) {
 	});
 };
 
+const updateJBModaHeader = function (
+	jbModalHeaderImg = false,
+	jbModalHeaderImgClip = false,
+	jbModalHeader1 = false,
+	jbModalHeader2 = false
+) {
+	let jbModalHeaderContents;
+	let jbModalHeaderTitle;
+
+	if (jbModalHeaderImg || jbModalHeader1 || jbModalHeader2) {
+		const jbModalContentHeaderDiv = document.querySelector(
+			'.jb__modal__content__header'
+		);
+		///////////////////////////////////////////////
+		// Build Header Content
+		///////////////////////////////////////////////
+		if (jbModalHeaderImg) {
+			let jbModalHeaderImageClass;
+			if (
+				jbModalHeaderImgClip === '--clip' ||
+				jbModalHeaderImgClip === '--clip-bottom' ||
+				jbModalHeaderImgClip === '--clip-bottom-mirror'
+			) {
+				jbModalHeaderImageClass = `jb__modal__content__header__background jb__modal__content__header__background${jbModalHeaderImgClip}`;
+			} else {
+				jbModalHeaderImageClass = `jb__modal__content__header__background`;
+			}
+
+			jbModalHeaderContents = `<img src="${jbModalHeaderImg}" class="${jbModalHeaderImageClass}" />`;
+		}
+		if (jbModalHeader1) {
+			const jbModalHeader1Content = `<h1>${jbModalHeader1}</h1>`;
+			jbModalHeaderTitle = `<div class="jb__modal__content__header__title">${jbModalHeader1Content}`;
+		}
+
+		if (jbModalHeader2) {
+			const jbModalHeader2Content = `<h2>${jbModalHeader2}</h2>`;
+			if (jbModalHeaderTitle) {
+				jbModalHeaderTitle = `${jbModalHeaderTitle}${jbModalHeader2Content}</div>`;
+			} else {
+				jbModalHeaderTitle = `<div class="jb__modal__content__header__title">${jbModalHeader2Content}</div>`;
+			}
+		} else {
+			if (jbModalHeaderTitle) {
+				jbModalHeaderTitle = jbModalHeaderTitle + '</div>';
+			}
+		}
+
+		if (jbModalHeaderContents) {
+			jbModalHeaderContents = jbModalHeaderContents + jbModalHeaderTitle;
+		} else {
+			jbModalHeaderContents = jbModalHeaderTitle;
+		}
+
+		///////////////////////////////////////////////
+		// Set Header Content
+		///////////////////////////////////////////////
+		if (jbModalContentHeaderDiv) {
+			jbModalContentHeaderDiv.innerHTML = '';
+			jbModalContentHeaderDiv.innerHTML = jbModalHeaderContents;
+		} else {
+			console.error(
+				'JB_Modal header not found on update attempt... Did you build one yet?'
+			);
+		}
+	}
+};
+
 const updateJBModalContent = function (jbModalContent = false) {
 	if (jbModalContent) {
 		const jbModalContentBodyDiv = document.querySelector(

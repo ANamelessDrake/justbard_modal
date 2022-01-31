@@ -53,6 +53,19 @@ destroyModalButton.addEventListener('click', function () {
 	destroyJBModal();
 });
 
+const updateModalHeaderButton = document.getElementById(
+	'jb_modal_update_header'
+);
+
+updateModalHeaderButton.addEventListener('click', function () {
+	updateJBModaHeader(
+		'https://images.unsplash.com/photo-1643575102128-0d6b42fbdda1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
+		'--clip',
+		'Some New Header',
+		'Wow this is some info!'
+	);
+});
+
 const updateModalButton = document.getElementById('jb_modal_update');
 updateModalButton.addEventListener('click', function () {
 	updateJBModalContent(
