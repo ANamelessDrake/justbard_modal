@@ -51,6 +51,17 @@ buildJBModal("This modal has a bottom clip applied to it's header image");
 
 ### Updating Content:
 
+To update the header content:
+
+```
+updateJBModaHeader(
+		'https://images.unsplash.com/photo-1643575102128-0d6b42fbdda1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
+		'--clip',
+		'Some New Header',
+		'Wow this is some info!'
+	);
+```
+
 To update the main body content:
 
 `updateJBModalContent("Some New Information! <br /><br /><strong>Can't miss out on knowing this new stuff!</strong>"); `
