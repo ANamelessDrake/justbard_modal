@@ -5,6 +5,7 @@ let jbModal;
 let jbModalParams = {};
 jbModalParams['modalSize'] = false;
 jbModalParams['buildHeader'] = true;
+jbModalParams['closeEverywhere'] = true;
 jbModalParams['jb_modal_header_image'] = false;
 jbModalParams['jb_modal_header_image_clip'] = false;
 jbModalParams['jb_modal_header_1'] = false;
@@ -131,11 +132,13 @@ const buildJBModal = function (jbModalContent = false, jbModalFooter = false) {
 		closeJBModal();
 	});
 
-	currentJBModal.addEventListener('click', function () {
-		if (event.srcElement.id === 'jb_modal') {
-			closeJBModal();
-		}
-	});
+	if (jbModalParams.closeEverywhere) {
+		currentJBModal.addEventListener('click', function () {
+			if (event.srcElement.id === 'jb_modal') {
+				closeJBModal();
+			}
+		});
+	}
 };
 
 const updateJBModaHeader = function (

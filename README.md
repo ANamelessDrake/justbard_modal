@@ -28,6 +28,7 @@ The defaults are below:
 ```
 jbModalParams.modalSize = false;
 jbModalParams.buildHeader = true;
+jbModalParams.closeEverywhere = true; // Grants the ability to close by clicking outside.
 jbModalParams.jb_modal_header_image = false;
 jbModalParams.jb_modal_header_image_clip = false;
 jbModalParams.jb_modal_header_1 = false;
